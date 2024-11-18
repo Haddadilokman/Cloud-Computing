@@ -1,46 +1,27 @@
-# Examples API
+# Cloud Computing - Énoncé projet
 
-Simple API that returns example records from a database.
+# Énoncé
 
-## Prerequisites
+Ce projet se basera sur la même API HTTP que la semaine 3 (07/10/2024) : [fhuitelec/junia-isen-examples-api](https://github.com/fhuitelec/junia-isen-examples-api).
 
-- you need to install [uv](https://docs.astral.sh/uv/guides/install-python/)
-- you must have a PostgreSQL instance available with an `example` table
+Le but de ce projet est de :
 
-## Installation
+- provisionner l’infrastructure de l’API sur Azure :
+    - Azure App Service
+    - Azure Database
+    - Azure Blob storage
+    - et toutes autre ressources pertinentes (virtual network, IAM, etc.)
+- créer un environnement d’intégration et déploiement continu (CI/CD) avec GitHub Actions :
+    - à la création d’une pull request sur le dépôt de l’application
+        - faire tourner les tests
+    - au merge d’une pull request sur `main` :
+        - faire tourner les tests
+        - créer et publier une image docker
+        - déployer cette nouvelle image docker sur l’App Service
 
-```shell
-# Install Python in the right version
-uv python install
+# Groupes
 
-# Install dependencies and create virtual env
-uv sync
-```
-
-## Run
-
-```shell
-# Export environment variables to connect to the PostgreSQL database...
-export DATABASE_HOST=
-export DATABASE_PORT=
-export DATABASE_NAME=
-export DATABASE_USER=
-export DATABASE_PASSWORD='' # Use single quotes to avoid shell interpolation with characters like $ or #
-# ...and the storage account
-export STORAGE_ACCOUNT_URL=
-
-# Run the application
-uv run fastapi dev examples/examples.py
-```
-
-## Run tests
-
-```
-uv run pytest tests/
-```
-
-They go on:
-
-- http://localhost:8000/docs
-- http://localhost:8000/
-- http://localhost:8000/examples
+Le groupe est composé de 3 personnes : 
+- DEMEULIER Theophile
+- DEGAIN Aurélien
+- HADDADI Lokman 
