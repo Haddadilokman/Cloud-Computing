@@ -1,4 +1,4 @@
-resource "azurerm_postgresql_flexible_server" "main" {
+resource "azurerm_postgresql_flexible_server" "postgresql_server" {
   name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -13,11 +13,9 @@ resource "azurerm_postgresql_flexible_server" "main" {
   public_network_access_enabled = false
 }
 
-resource "azurerm_postgresql_flexible_server_database" "main" {
+resource "azurerm_postgresql_flexible_server_database" "postgresql_database" {
   name      = var.database_name
-  server_id = azurerm_postgresql_flexible_server.main.id
+  server_id = azurerm_postgresql_flexible_server.postgresql_server.id
   charset   = "UTF8"
   collation = "fr_FR.utf8"
 }
-
-

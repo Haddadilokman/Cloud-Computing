@@ -1,8 +1,9 @@
 output "server_name" {
-  value = azurerm_postgresql_flexible_server.main.name
+  value       = azurerm_postgresql_flexible_server.postgresql_server.name
+  description = "The name of the PostgreSQL Flexible Server."
 }
 
 output "database_name" {
-  value = azurerm_postgresql_flexible_server_database.main.name
+  value       = azurerm_postgresql_flexible_server_database.postgresql_database.name
+  description = "The name of the database created on the PostgreSQL Flexible Server."
 }
-
