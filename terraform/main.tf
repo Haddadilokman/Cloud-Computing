@@ -20,7 +20,7 @@ module "blob_storage" {
   resource_group_name  = var.resource_group_name
   location             = var.location
   container_name       = var.container_name
-  depends_on = [ azurerm_resource_group.main ]
+  //depends_on             = [ azurerm_resource_group.main ]
 }
 
 module "database" {
@@ -45,4 +45,5 @@ module "app_service" {
   location               = var.location
   resource_group_name    = var.resource_group_name
   subnet_id              = module.network.app_service_subnet_id
+  depends_on            = [azurerm_resource_group.main]
 }
