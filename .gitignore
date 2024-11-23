@@ -173,3 +173,5 @@ terraform/terraform.tfstate.backup
 terraform/*.tfplan
 
 *.tfvars 
+
+terraform/.terraform.tfstate.lock.info
