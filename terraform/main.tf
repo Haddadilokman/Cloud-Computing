@@ -11,6 +11,7 @@ module "network" {
   resource_group_name  = var.resource_group_name
   subnet_name          = var.subnet_name
   subnet_address_prefixes = var.subnet_address_prefixes
+  depends_on = [ azurerm_resource_group.main ]
 }
 
 module "blob_storage" {
@@ -19,6 +20,7 @@ module "blob_storage" {
   resource_group_name  = var.resource_group_name
   location             = var.location
   container_name       = var.container_name
+  depends_on = [ azurerm_resource_group.main ]
 }
 
 module "database" {
