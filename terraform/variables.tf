@@ -116,4 +116,5 @@ variable "docker_registry_url" {
 variable "postgresql_db_name" {
   description = "Your PostgreSQL database name"
   type        = string
+  default = "cc-database"
 }
