@@ -18,8 +18,3 @@ variable "container_name" {
   description = "The name of the Azure Storage Container to be created."
   type        = string
 }
-
-variable "subnet_id" {
-  description = "The ID of the subnet for the service endpoint"
-  type        = string
-}

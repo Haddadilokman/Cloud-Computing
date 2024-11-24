@@ -112,3 +112,8 @@ variable "docker_registry_url" {
   type        = string
   default     = "https://ghcr.io"
 }
+
+variable "postgresql_db_name" {
+  description = "Your PostgreSQL database name"
+  type        = string
+}

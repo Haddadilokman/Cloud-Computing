@@ -61,3 +61,24 @@ variable "storage_account_id" {
   description = "The storage account ID"
   type        = string
 }
+
+variable "database_host" {
+  description = "The database host"
+  type        = string
+}
+
+variable "database_name" {
+  description = "The database name"
+  type        = string
+}
+
+variable "database_user" {
+  description = "The database user"
+  type        = string
+}
+
+variable "database_password" {
+  description = "The database password"
+  type        = string
+  sensitive   = true
+}

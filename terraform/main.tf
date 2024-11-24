@@ -20,8 +20,7 @@ module "blob_storage" {
   resource_group_name  = var.resource_group_name
   location             = var.location
   container_name       = var.container_name
-  subnet_id            = module.network.storage_subnet_id
-  depends_on          = [module.network]
+  depends_on          = [azurerm_resource_group.main]
 }
 
 module "database" {
@@ -53,4 +52,10 @@ module "app_service" {
   docker_registry_username = var.docker_registry_username
   storage_url        = module.blob_storage.storage_url
   storage_account_id = module.blob_storage.storage_account_id
+  # Database environment variables
+  database_host     = module.database.postgresql_host
+  database_port     = module.database.postgresql_port
+  database_name     = module.database.server_name
+  database_user     = var.admin_login
+  database_password = var.admin_password
 }

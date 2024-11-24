@@ -39,14 +39,6 @@ resource "azurerm_subnet" "postgresql_subnet" {
   }
 }
 
-resource "azurerm_subnet" "storage_subnet" {
-  name                 = "subnet-storage"
-  resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.4.0/24"]
-  service_endpoints    = ["Microsoft.Storage"]
-}
-
 resource "azurerm_private_dns_zone" "postgresql_dns_zone" {
   name                = "privatelink.postgres.database.azure.com"
   resource_group_name = var.resource_group_name
