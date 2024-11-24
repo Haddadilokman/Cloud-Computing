@@ -17,3 +17,8 @@ output "postgresql_subnet_id" {
   value       = azurerm_subnet.postgresql_subnet.id
   description = "The ID of the subnet allocated for the PostgreSQL Flexible Server."
 }
+
+output "storage_subnet_id" {
+  value       = azurerm_subnet.storage_subnet.id
+  description = "The ID of the subnet allocated for the Storage Account."
+}
