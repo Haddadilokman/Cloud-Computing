@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
-  default = "cloud-computing"
+  default = "cloud-computing-projet"
 }
 
 variable "location" {
@@ -13,7 +13,7 @@ variable "location" {
 variable "vnet_name" {
   description = "The name of the virtual network (VNet)."
   type        = string
-  default = "cc-vnet"
+  default = "cc-vnet-projet"
 }
 
 variable "address_space" {
@@ -25,7 +25,7 @@ variable "address_space" {
 variable "subnet_name" {
   description = "The name of the subnet for the virtual network."
   type        = string
-  default = "subnet"
+  default = "subnet-projet"
 }
 
 variable "subnet_address_prefixes" {
@@ -49,6 +49,7 @@ variable "container_name" {
 variable "server_name" {
   description = "The name of the PostgreSQL server."
   type        = string
+  default = "cc-database-projet"
 }
 
 variable "admin_login" {
@@ -77,23 +78,25 @@ variable "storage_mb" {
 variable "database_name" {
   description = "The name of the initial database to create on the PostgreSQL server."
   type        = string
+  default = "mydatabaseprojet"
 }
 
 variable "name" {
   description = "The friendly name of the PostgreSQL Flexible Server."
   type        = string
+  default = "psql-server-projet"
 }
 
 variable "app_service_plan_name" {
   description = "The name of the App Service Plan."
   type        = string
-  default = "cc-appserviceplan"
+  default = "cc-appserviceplan-projet"
 }
 
 variable "app_service_name" {
   description = "The name of the App Service."
   type        = string
-  default = "cc-appservice"
+  default = "cc-appservice-projet"
 }
 
 variable "subscription_id" {
@@ -140,4 +143,5 @@ variable "new_relic_license_key" {
 variable "new_relic_app_name" {
   type        = string
   description = "Name of the application in New Relic."
+  default = "log"
 }
