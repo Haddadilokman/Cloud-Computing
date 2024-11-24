@@ -51,4 +51,6 @@ module "app_service" {
   docker_registry_password = var.docker_registry_password
   docker_registry_url = var.docker_registry_url
   docker_registry_username = var.docker_registry_username
+  storage_url        = module.blob_storage.storage_url
+  storage_account_id = module.blob_storage.storage_account_id
 }

@@ -22,6 +22,11 @@ resource "azurerm_linux_web_app" "app_service" {
     }
   }
 
+  app_settings = {
+    STORAGE_ACCOUNT_URL = var.storage_url
+  }
+
+
   identity {
     type = "SystemAssigned"
   }
@@ -30,4 +35,10 @@ resource "azurerm_linux_web_app" "app_service" {
 resource "azurerm_app_service_virtual_network_swift_connection" "vnet_connection" {
   app_service_id = azurerm_linux_web_app.app_service.id
   subnet_id      = var.subnet_id
+}
+
+resource "azurerm_role_assignment" "app_service_storage_access" {
+  principal_id         = azurerm_linux_web_app.app_service.identity[0].principal_id
+  role_definition_name = "Storage Blob Data Contributor"
+  scope                = var.storage_account_id
 }
