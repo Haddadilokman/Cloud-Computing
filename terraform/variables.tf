@@ -88,3 +88,27 @@ variable "subscription_id" {
   description = "The Azure subscription ID where the resources will be deployed."
   type        = string
 }
+
+
+variable "docker_registry_password" {
+  description = "Docker password"
+  type        = string
+}
+
+variable "docker_image" {
+  description = "Image"
+  type        = string
+  default     = "ghcr.io/haddadilokman/cloudcomputing:latest"
+}
+
+variable "docker_registry_username" {
+  description = "Docker username"
+  type        = string
+  default     = "Theodem02"
+}
+
+variable "docker_registry_url" {
+  description = "Docker url"
+  type        = string
+  default     = "https://ghcr.io"
+}

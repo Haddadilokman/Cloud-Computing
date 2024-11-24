@@ -29,3 +29,25 @@ variable "database_port" {
   type        = number
   default     = 5432
 }
+
+variable "docker_registry_password" {
+  description = "The Docker registry password"
+  type        = string
+  sensitive   = true
+}
+
+variable "docker_image" {
+  description = "The Docker image. Should always be latest"
+  type        = string
+}
+
+variable "docker_registry_url" {
+  description = "The Docker registry URL"
+  type        = string
+
+}
+variable "docker_registry_username" {
+  description = "The Docker registry username"
+  type        = string
+  sensitive   = true
+}

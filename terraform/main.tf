@@ -46,5 +46,9 @@ module "app_service" {
   location               = var.location
   resource_group_name    = var.resource_group_name
   subnet_id              = module.network.app_service_subnet_id
-  depends_on            = [azurerm_resource_group.main]
+  depends_on             = [azurerm_resource_group.main]
+  docker_image           = var.docker_image
+  docker_registry_password = var.docker_registry_password
+  docker_registry_url = var.docker_registry_url
+  docker_registry_username = var.docker_registry_username
 }
