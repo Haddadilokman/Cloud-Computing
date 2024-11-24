@@ -1,0 +1,11 @@
+subscription_id = ""
+server_name            = ""
+admin_login            = ""
+admin_password         = ""
+database_name          = ""
+name                   = ""
+new_relic_license_key = ""
+docker_registry_password = ""
+docker_registry_username = ""
+
+

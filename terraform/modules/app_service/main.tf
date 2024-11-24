@@ -29,7 +29,9 @@ resource "azurerm_linux_web_app" "app_service" {
     DATABASE_NAME     = var.database_name
     DATABASE_USER     = var.database_user
     DATABASE_PASSWORD = var.database_password
-    
+    NEW_RELIC_LICENSE_KEY = var.new_relic_license_key
+    NEW_RELIC_APP_NAME = var.new_relic_app_name
+  
     STORAGE_ACCOUNT_URL = var.storage_url
   }
 

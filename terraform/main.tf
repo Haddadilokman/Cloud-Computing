@@ -58,4 +58,12 @@ module "app_service" {
   database_name     = module.database.server_name
   database_user     = var.admin_login
   database_password = var.admin_password
+
+  #new relic settings : 
+
+  new_relic_app_name = var.new_relic_app_name
+  new_relic_license_key = var.new_relic_license_key
+  
+  
+   
 }

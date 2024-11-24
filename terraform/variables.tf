@@ -1,41 +1,49 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
+  default = "cloud-computing"
 }
 
 variable "location" {
   description = "The Azure location/region for the resources (e.g., France Central)."
   type        = string
+  default = "France Central"
 }
 
 variable "vnet_name" {
   description = "The name of the virtual network (VNet)."
   type        = string
+  default = "cc-vnet"
 }
 
 variable "address_space" {
   description = "The address space for the virtual network."
   type        = list(string)
+  default = [ "10.0.0.0/16" ]
 }
 
 variable "subnet_name" {
   description = "The name of the subnet for the virtual network."
   type        = string
+  default = "subnet"
 }
 
 variable "subnet_address_prefixes" {
   description = "The address prefixes for the subnet."
   type        = list(string)
+  default = [ "10.0.1.0/24" ]
 }
 
 variable "storage_account_name" {
   description = "The name of the storage account."
   type        = string
+  default = "ccprojectblobstorage"
 }
 
 variable "container_name" {
   description = "The name of the blob storage container."
   type        = string
+  default = "api"
 }
 
 variable "server_name" {
@@ -57,11 +65,13 @@ variable "admin_password" {
 variable "sku_name" {
   description = "The SKU of the PostgreSQL server."
   type        = string
+  default = "B_Standard_B2ms"
 }
 
 variable "storage_mb" {
   description = "The storage size in MB for the PostgreSQL server."
   type        = number
+  default = 32768
 }
 
 variable "database_name" {
@@ -77,11 +87,13 @@ variable "name" {
 variable "app_service_plan_name" {
   description = "The name of the App Service Plan."
   type        = string
+  default = "cc-appserviceplan"
 }
 
 variable "app_service_name" {
   description = "The name of the App Service."
   type        = string
+  default = "cc-appservice"
 }
 
 variable "subscription_id" {
@@ -117,4 +129,15 @@ variable "postgresql_db_name" {
   description = "Your PostgreSQL database name"
   type        = string
   default = "cc-database"
+}
+
+variable "new_relic_license_key" {
+  type        = string
+  sensitive   = true
+  description = "New Relic license key used by the app service container to publish logs & metrics."
+}
+
+variable "new_relic_app_name" {
+  type        = string
+  description = "Name of the application in New Relic."
 }
