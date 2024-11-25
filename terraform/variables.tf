@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure location/region for the resources (e.g., France Central)."
   type        = string
-  default = "France Central"
+  default = "francecentral"
 }
 
 variable "vnet_name" {
@@ -37,7 +37,7 @@ variable "subnet_address_prefixes" {
 variable "storage_account_name" {
   description = "The name of the storage account."
   type        = string
-  default = "ccprojectblobstorage"
+  default = "ccblobstorage"
 }
 
 variable "container_name" {
@@ -84,7 +84,7 @@ variable "database_name" {
 variable "name" {
   description = "The friendly name of the PostgreSQL Flexible Server."
   type        = string
-  default = "psql-server-projet"
+  default = "psql-server-"
 }
 
 variable "app_service_plan_name" {
@@ -96,7 +96,7 @@ variable "app_service_plan_name" {
 variable "app_service_name" {
   description = "The name of the App Service."
   type        = string
-  default = "cc-appservice-projet"
+  default = "cc-appservice-"
 }
 
 variable "subscription_id" {
